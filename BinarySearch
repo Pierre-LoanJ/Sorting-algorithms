@@ -1,0 +1,19 @@
+public static int binarySearch(int t[], nb) {
+  int lo = 0;
+  int hi = t.length - 1;
+  
+  if (nb > t[hi] || nb < t[lo]) { return -1; }
+  else {
+     while (lo != hi) {
+        if (nb >= t[mi]) { 
+           lo = mi;
+        }
+        else if (nb < t[mi]) {
+           hi = mi;
+        }
+        mi = (hi-lo)/2 + lo;
+     }
+     if (nb != t[lo]) { return -1; }
+     else return lo;
+  }
+}
