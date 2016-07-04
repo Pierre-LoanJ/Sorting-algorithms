@@ -6,11 +6,10 @@ public class MergeSort {
     }
     int i = lo, j = mi+1;
     for (int k = lo; k <= hi; k++) {
-      if (i > mi)      t[k] = temp[j++];
-      else if (j > hi) t[k] = temp[i++];
-      
-      if (temp[i] > temp[j])       t[k] = temp[j++];
-      else if (temp[j] > temp[i])  t[k] = temp[i++];
+      if (i > mi)                 t[k] = temp[j++];
+      else if (j > hi)            t[k] = temp[i++];
+      else if (temp[i] > temp[j]) t[k] = temp[j++];
+      else                        t[k] = temp[i++];
     }
   }
   public static void divide(char t[], char temp[], int lo, int hi) {
