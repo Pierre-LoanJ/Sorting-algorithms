@@ -17,13 +17,13 @@ public class MergeSort {
     int mi = lo + (hi - lo) / 2;
     if (hi <= lo) { return; }
     else {
-      divide(t[], temp[], lo, mi);
-      divide(t[], temp[], mi, hi);
-      merge(t[], temp[], lo, mi, hi);
+      divide(t, temp lo, mi);
+      divide(t, temp mi, hi);
+      merge(t, temp, lo, mi, hi);
     }
   }
   public static void sort(char t[]) {
     char[] temp = new char[t.length];
-    divide(t[], temp[], 0, t.length - 1);
+    divide(t, temp, 0, t.length - 1);
   }
 }
