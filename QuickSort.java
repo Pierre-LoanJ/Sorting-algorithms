@@ -1,7 +1,7 @@
 public class Quicksort {
   public static int partition(char[] a, int i, int j) {
     while (i <= j) {
-      if (i >= a.length || j < 0) return 0;
+      if (i >= a.length || j < 0) break;
       if (a[i] <= a[k]) i++;
       if (a[j] >  a[k]) j++;
       if (a[i] > a[k] && a[j] < a[k]) {
@@ -16,7 +16,8 @@ public class Quicksort {
     return j;
   }
   public static void sort( char[] a, int i, int j) {
-    partition(a, i, j);
+    if (i >= j) return;
+    int part = partition(a, i, j);
     sort(a, i, k);
     sort(a, k+1, j);
   }
