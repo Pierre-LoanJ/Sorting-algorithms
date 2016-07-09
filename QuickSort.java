@@ -1,4 +1,14 @@
 public class Quicksort {
+  /*
+  * The idea is partition the array recursively:
+  * i goes through to the right
+  * j goes through to the left
+  * for i, keep a[i] < a[k], otherwise stops
+  * for j; keep a[j] > a[k], otherwise stops
+  * when i AND j have stopped exchange a[i] and a[j]
+  * so this keeps a partitionned
+  * Once i and j have crossed stop and exchange a[k] and a [j] (put a[k] to the right place)
+  */
   public static int partition(char[] a, int i, int j) {
     while (i <= j) {
       if (i >= a.length || j < 0) break;
