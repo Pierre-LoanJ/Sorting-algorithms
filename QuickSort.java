@@ -9,30 +9,41 @@ public class Quicksort {
   * so this keeps a partitionned
   * Once i and j have crossed stop and exchange a[k] and a [j] (put a[k] to the right place)
   */
-  public static int partition(char[] a, int i, int j) {
-    while (i <= j) {
-      if (i >= a.length || j < 0) break;
-      if (a[i] <= a[k]) i++;
-      if (a[j] >  a[k]) j++;
-      if (a[i] > a[k] && a[j] < a[k]) {
-        char temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-      }
-    }
-    char p = a[j];
-    a[j] = a[k];
-    a[k] = p;
-    return j;
-  }
-  public static void sort( char[] a, int i, int j) {
-    if (i >= j) return;
-    int part = partition(a, i, j);
-    sort(a, i, k);
-    sort(a, k+1, j);
-  }
-  public static void sort(char[] a) {
-    shuffle(a);
-    sort(a, 1, a.length - 1);
-  }
-}
+	  public static int partition(int[] a, int lo, int hi) {
+		int i = lo, j = hi+1;
+	  while (true)
+	    {
+	    	while(a[++i] < a[lo])
+	    	{
+	    		if (i == hi) break;
+	    	}
+	    	while(a[lo] < a[--j])
+	    	{
+	    		if (j == lo) break;
+	    	}
+	    	if (i >= j) break;
+	    	int temp = a[i];
+	        a[i] = a[j];
+	        a[j] = temp;
+	    }
+	    int temp = a[j];
+        a[j] = a[lo];
+        a[lo] = temp;
+        return j;
+	  }
+	  public static void sort( int[] a, int lo, int hi) {
+	    if (lo >= hi) return;
+	    int k = partition(a, lo, hi);
+	    sort(a, lo, k-1);
+	    sort(a, k+1, hi);
+	  }
+	  public static void sort(int[] a) {
+	   //StdRandom.shuffle(a);
+	    sort(a, 0, a.length - 1);
+	  }
+	 public static void main(String args[]) {
+		 int t[] = { 4, 9, 1, 7, 5, 2, 8, 3, 0, 6 };
+		 sort(t);
+		 System.out.println(t[0]);
+	 }
+}   
