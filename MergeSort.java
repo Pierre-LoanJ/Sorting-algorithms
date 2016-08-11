@@ -16,8 +16,8 @@ public class MergeSort {
     int mi = lo + (hi - lo) / 2;
     if (hi <= lo) { return; }
     else {
-      divide(t, temp lo, mi);
-      divide(t, temp mi, hi);
+      divide(t, temp, lo, mi);
+      divide(t, temp, mi, hi);
       merge(t, temp, lo, mi, hi);
     }
   }
